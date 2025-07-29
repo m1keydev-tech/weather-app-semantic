@@ -3,6 +3,20 @@
   margin: 0;
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 3px 0 rgba(173, 0, 0, 0.3);
+  }
+
+  65% {
+    box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0);
+  }
+}
+
 .container {
   color: white;
   width: 100vw;
@@ -41,9 +55,10 @@
 }
 
 #search-input {
+  width: 100%;
   border: 0;
   outline: 0;
-  padding: 3px 3px 3px 20px;
+  padding: 3px 3px 3px 36px;
   background: transparent;
   height: 20px;
   color: white;
@@ -51,6 +66,27 @@
 
 #search-input::placeholder {
   color: rgb(206, 206, 206);
+}
+
+.microphone {
+  cursor: pointer;
+}
+
+.microphone.recording .fa-microphone {
+  display: none;
+}
+
+.microphone .recording-icon {
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: #e22d2d;
+  border-radius: 50%;
+  animation: pulse 0.3s linear;
+}
+
+.microphone.recording .recording-icon {
+  display: inline-block;
 }
 
 .info-wrapper {
